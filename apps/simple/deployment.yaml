@@ -12,7 +12,7 @@ spec:
         app: sample-spring-kotlin
     spec:
       containers:
-      - name: sample-spring-kotlin
+      - name: sample-spring-kotlin_v2
         image: piomin/sample-spring-kotlin:1.4.8
         ports:
         - containerPort: 8080
