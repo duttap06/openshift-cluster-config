@@ -3,12 +3,12 @@ entries:
   spring-boot-template:
   - apiVersion: v1
     appVersion: "1.0"
-    created: "2025-08-18T05:14:37.091037389Z"
+    created: "2025-08-18T19:31:39.660768028Z"
     description: A Helm chart for Kubernetes
-    digest: 14cc5c2d0c931558f7aec35c7b22a07317e09706f3d76fb752a23860a44bbf62
+    digest: 145ffa2ba11989e0c53e62c8f37ae14097ed77c659ec8927c9f142ee836cb5d4
     name: spring-boot-template
     type: application
     urls:
     - spring-boot-template-1.0.0.tgz
     version: 1.0.0
-generated: "2025-08-18T05:14:37.090652967Z"
+generated: "2025-08-18T19:31:39.660409148Z"
