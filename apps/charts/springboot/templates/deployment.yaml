@@ -1,0 +1,19 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: {{ appName }}
+spec:
+  selector:
+    matchLabels:
+      app: {{ appName }}
+  template:
+    metadata:
+      labels:
+        app: {{ appName }}
+    spec:
+      containers:
+      - name: {{ appName }}
+        image: piomin/sample-spring-kotlin:1.4.8
+        ports:
+        - containerPort: 8080
+          name: http
