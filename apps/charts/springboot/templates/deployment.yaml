@@ -1,18 +1,20 @@
+{{- $appName := "{{ .Values.springboot.appName }}" }}
+
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: {{ .Values.springboot.appName }}
+  name: {{ $appName }}
 spec:
   selector:
     matchLabels:
-      app: {{ .Values.springboot.appName }}
+      app: {{ $appName }}
   template:
     metadata:
       labels:
-        app: {{ .Values.springboot.appName }}
+        app: {{ $appName }}
     spec:
       containers:
-      - name: {{ .Values.springboot.appName }}
+      - name: {{ $appName }}
         image: piomin/sample-spring-kotlin:1.4.8
         ports:
         - containerPort: 8080

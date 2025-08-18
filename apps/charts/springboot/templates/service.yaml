@@ -1,11 +1,13 @@
+{{- $appName := "{{ .Values.springboot.appName }}" }}
+
 apiVersion: v1
 kind: Service
 metadata:
-  name: {{ .Values.springboot.appName }}
+  name: {{ $appName }}
 spec:
   type: ClusterIP
   selector:
-    app: {{ .Values.springboot.appName }}
+    app: {{ $appName }}
   ports:
   - port: 8080
     name: http
