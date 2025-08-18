@@ -1,11 +1,11 @@
 apiVersion: v1
 kind: Service
 metadata:
-  name: {{ appName }}
+  name: {{ .Values.springboot.appName }}
 spec:
   type: ClusterIP
   selector:
-    app: {{ appName }}
+    app: {{ .Values.springboot.appName }}
   ports:
   - port: 8080
     name: http
