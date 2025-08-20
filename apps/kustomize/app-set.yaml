@@ -23,7 +23,7 @@ spec:
       project: default
       sources:
       - path: apps/kustomize
-        repoURL: https://github.com/RachnaDodia/openshift-cluster-config.git
+        repoURL: https://github.com/duttap06/openshift-cluster-config.git
         targetRevision: master
       syncPolicy:
         automated:
