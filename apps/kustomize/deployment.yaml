@@ -5,14 +5,14 @@ metadata:
 spec:
   selector:
     matchLabels:
-      app: PLACEHOLDER_NAME
+      app: placeholder-name
   template:
     metadata:
       labels:
-        app: PLACEHOLDER_NAME
+        app: placeholder-name
     spec:
       containers:
-      - name: PLACEHOLDER_NAME
+      - name: placeholder-name
         image: piomin/sample-spring-kotlin:1.4.8
         ports:
         - containerPort: 8080
