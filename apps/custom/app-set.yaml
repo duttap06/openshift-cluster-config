@@ -1,0 +1,34 @@
+apiVersion: argoproj.io/v1alpha1
+kind: ApplicationSet
+metadata:
+  name: sample-spring-boot-kustomize
+  namespace: openshift-gitops
+spec:
+  generators:
+  - clusterDecisionResource:
+      configMapRef: acm-placement
+      labelSelector:
+        matchLabels:
+          cluster.open-cluster-management.io/placement: demo-gitops-placement
+      requeueAfterSeconds: 180
+  template:
+    metadata:
+      labels:
+        velero.io/exclude-from-backup: "true"
+      name: sample-spring-boot-kustomize-{{name}}
+    spec:
+      destination:
+        namespace: demo
+        server: '{{server}}'
+      project: default
+      sources:
+      - path: apps/kustomize
+        repoURL: https://github.com/duttap06/openshift-cluster-config.git
+        targetRevision: master
+      syncPolicy:
+        automated:
+          prune: true
+          selfHeal: true
+        syncOptions:
+        - CreateNamespace=true
+        - PruneLast=true
