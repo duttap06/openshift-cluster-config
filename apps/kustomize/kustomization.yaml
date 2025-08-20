@@ -1,0 +1,40 @@
+---
+apiVersion: kustomize.config.k8s.io/v1beta1
+kind: Kustomization
+
+resources:
+  - deployment.yaml
+  - service.yaml
+  - app-set.yaml
+
+patches:
+# deployment
+  - target:
+      group: apps/v1
+      kind: Deployment
+      namespace: demo
+      name: sample-spring-kotlin-kustomize
+    patch: |-
+      - op: replace
+        path: /spec/selector/matchLabels/app  
+        value: sample-spring-kotlin-kustomize
+
+      - op: replace
+        path: /spec/template/metadata/labels/app
+        value: sample-spring-kotlin-kustomize
+
+      - op: replace
+        path: /spec/template/spec/containers/0/name
+        value: sample-spring-kotlin-kustomize
+
+#service
+  - target:
+      group: v1
+      kind: Service
+      namespace: demo
+      name: sample-spring-kotlin-kustomize
+    patch: |-
+      - op: replace
+        path: /spec/selector/app  
+        value: sample-spring-kotlin-kustomize
+
