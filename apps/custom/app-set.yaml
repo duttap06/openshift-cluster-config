@@ -21,6 +21,7 @@ spec:
         - group: ""
           kind: Deployment
           name: sample-spring-kotlin-kustomize
+          namespace: demo
           jsonPointers:
             - /spec/selector/matchLabels/app
             - /spec/template/metadata/labels/app
