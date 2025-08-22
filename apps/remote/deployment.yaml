@@ -6,7 +6,7 @@ metadata:
 spec:
   selector:
     matchLabels:
-      app: sample-spring-kotlin-kustomize 
+      app: placeholder-name
   template:
     metadata:
       labels:

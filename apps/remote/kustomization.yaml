@@ -5,6 +5,7 @@ kind: Kustomization
 resources:
   - deployment.yaml
   - service.yaml
+  - ../custom
 
 patches:
 # deployment
@@ -16,6 +17,10 @@ patches:
       name: sample-spring-kotlin-kustomize
 
     patch: |-
+
+      - op: replace
+        path: /spec/selector/matchLabels/app
+        value: sample-spring-kotlin-kustomize
 
       - op: replace
         path: /spec/template/metadata/labels/app
