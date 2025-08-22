@@ -10,8 +10,7 @@ replacements:
   - source:
       kind: Deployment
       name: sample-spring-kotlin-kustomize
-      fieldRef:
-        fieldPath: metadata.name
+      fieldPath: metadata.name
     targets:
       - select:
           kind: Deployment
