@@ -22,7 +22,7 @@ spec:
         server: '{{server}}'
       project: default
       sources:
-      - path: apps/kustomize
+      - path: apps/remote
         repoURL: https://github.com/duttap06/openshift-cluster-config.git
         targetRevision: master
       syncPolicy:
