@@ -17,6 +17,14 @@ spec:
         velero.io/exclude-from-backup: "true"
       name: sample-spring-boot-kustomize-{{name}}
     spec:
+      ignoreDifferences:
+        - group: ""
+          kind: Deployment
+          name: sample-spring-kotlin-kustomize
+          jsonPointers:
+            - /spec/selector/matchlabels/app
+            - /spec/template/metadata/labels/app
+            - /spec/template/spec/containers/0/name
       destination:
         namespace: demo
         server: '{{server}}'
