@@ -17,7 +17,7 @@ patches:
     patch: |-
 
       - op: replace
-        path: /spec/selector/matchlabels/app
+        path: /spec/selector/matchLabels/app
         value: sample-spring-kotlin-kustomize
 
       - op: replace
