@@ -4,6 +4,4 @@ kind: Kustomization
 
 resources:
   - ../remote
-
-components:
   - ../custom
