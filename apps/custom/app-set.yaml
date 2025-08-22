@@ -22,7 +22,7 @@ spec:
           kind: Deployment
           name: sample-spring-kotlin-kustomize
           jsonPointers:
-            - /spec/selector/matchlabels/app
+            - /spec/selector/matchLabels/app
             - /spec/template/metadata/labels/app
             - /spec/template/spec/containers/0/name
       destination:
