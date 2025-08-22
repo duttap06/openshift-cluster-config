@@ -14,11 +14,8 @@ patches:
       kind: Deployment
       namespace: demo
       name: sample-spring-kotlin-kustomize
-    patch: |-
 
-      - op: replace
-        path: /spec/selector/matchLabels/app
-        value: sample-spring-kotlin-kustomize
+    patch: |-
 
       - op: replace
         path: /spec/template/metadata/labels/app
@@ -27,6 +24,19 @@ patches:
       - op: replace
         path: /spec/template/spec/containers/0/name
         value: sample-spring-kotlin-kustomize
+
+    replacements:
+      - source:
+          kind: Deployment
+          name: sample-spring-kotlin-kustomize
+          fieldref:
+            fieldpath: metadata.name
+        targets:
+          - select:
+              kind: Deployment
+              name: sample-spring-kotlin-kustomize
+            fieldPaths:
+              - spec.selector.matchLabels.app
 
 #service
   - target:
