@@ -6,6 +6,9 @@ resources:
   - deployment.yaml
   - service.yaml
 
+components:
+  - ../custom
+
 patches:
 # deployment
   - target:
