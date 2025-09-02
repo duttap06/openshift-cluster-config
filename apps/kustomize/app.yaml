@@ -16,8 +16,8 @@ spec:
     targetRevision: master
     helm:
       valueFiles:
-        - /apps/kustomize/values.yaml
-   destination:
-     name: in-cluster
-   syncPolicy:
-#    automated: {}
+        - values.yaml
+  destination:
+    name: in-cluster
+  syncPolicy:
+#   automated: {}
