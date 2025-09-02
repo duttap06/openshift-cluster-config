@@ -1,0 +1,23 @@
+---
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: demo-app
+  namespace: demo
+  annotations:
+    argocd.argoproj.io/sync-wave: "-1"
+  finalizers:
+    - resources-finalizer.argocd.argoproj.io
+spec:
+  project: demo
+  source:
+    repoURL: 'https://github.com/duttap06/openshift-cluster-config.git'
+    path: apps/charts/springboot
+    targetRevision: master
+    helm:
+      valueFiles:
+        - /apps/kustomize/values.yaml
+   destination:
+     name: in-cluster
+   syncPolicy:
+#    automated: {}
