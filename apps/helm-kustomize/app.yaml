@@ -9,7 +9,6 @@ metadata:
   finalizers:
     - resources-finalizer.argocd.argoproj.io
 spec:
-  project: demo
   source:
     repoURL: 'https://github.com/duttap06/openshift-cluster-config.git'
     path: apps/helm-kustomize
@@ -17,7 +16,7 @@ spec:
     targetRevision: master
   destination:
     namespace: demo
-    server: local-cluster
+    server: '{{server}}'
   project: default      
   syncPolicy:
 #   automated: {}
