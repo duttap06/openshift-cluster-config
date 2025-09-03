@@ -1,7 +1,7 @@
 apiVersion: argoproj.io/v1alpha1
 kind: ApplicationSet
 metadata:
-  name: sample-spring-boot-kustomize
+  name: sample-spring-boot-helm
   namespace: openshift-gitops
 spec:
   generators:
@@ -15,12 +15,12 @@ spec:
     metadata:
       labels:
         velero.io/exclude-from-backup: "true"
-      name: sample-spring-boot-kustomize-{{name}}
+      name: sample-spring-boot-helm-{{name}}
     spec:
       ignoreDifferences:
         - group: ""
           kind: Deployment
-          name: sample-spring-kotlin-kustomize
+          name: sample-spring-kotlin-helm
           namespace: demo
           jsonPointers:
             - /spec/selector/matchLabels/app
@@ -31,7 +31,7 @@ spec:
         server: '{{server}}'
       project: default
       sources:
-      - path: apps/custom
+      - path: apps/helm-kustomize
         repoURL: https://github.com/duttap06/openshift-cluster-config.git
         targetRevision: master
       syncPolicy:
