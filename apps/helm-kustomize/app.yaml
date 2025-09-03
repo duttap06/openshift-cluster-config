@@ -17,7 +17,7 @@ spec:
     targetRevision: master
   destination:
     namespace: demo
-    server: in-cluster
+    server: local-cluster
   project: default      
   syncPolicy:
 #   automated: {}
