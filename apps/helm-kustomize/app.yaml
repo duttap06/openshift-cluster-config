@@ -12,12 +12,12 @@ spec:
   project: demo
   source:
     repoURL: 'https://github.com/duttap06/openshift-cluster-config.git'
-    path: apps/charts/springboot
+    path: apps/helm-kustomize
+    kustomize: {}
     targetRevision: master
-    helm:
-      valueFiles:
-        - values.yaml
   destination:
-    name: in-cluster
+    namespace: demo
+    server: '{{server}}'
+  project: default      
   syncPolicy:
 #   automated: {}

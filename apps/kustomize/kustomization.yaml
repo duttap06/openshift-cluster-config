@@ -4,7 +4,6 @@ kind: Kustomization
 
 resources:
   - app.yaml
-  - ../remote
 
 components:
   - ../custom
