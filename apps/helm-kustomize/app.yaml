@@ -16,7 +16,6 @@ spec:
     targetRevision: master
   destination:
     namespace: demo
-    server: '{{server}}'
   project: default      
   syncPolicy:
 #   automated: {}
